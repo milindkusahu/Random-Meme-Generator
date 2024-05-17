@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, rgb(75, 121, 161), rgb(40, 62, 81));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+}
+
+.container {
+    max-width: 900px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.search-input,
+.category-select {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    margin-right: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.search-input::placeholder {
+    color: #fff;
+}
+
+.category-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z" fill="%23fff"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 50px;
+    color: transparent;
+    text-shadow: 0 0 0 #fff;
+}
+
+.meme-generator {
+    margin-top: 30px;
+}
+
+.meme-container {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.meme-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.meme-title {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 18px;
+}
+
+.meme-author {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.meme-actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.meme-actions button,
+.meme-actions a {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 15px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.meme-actions button:hover,
+.meme-actions a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.meme-actions button i,
+.meme-actions a i {
+    margin-right: 8px;
+}
+
+.meme-gallery,
+.favorite-memes {
+    margin-top: 50px;
+}
+
+.gallery-container,
+.favorite-memes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+    margin-top: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item .meme-title {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.gallery-item .meme-author {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.gallery-item .remove-meme-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: rgba(255, 0, 0, 0.7);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.gallery-item .remove-meme-btn:hover {
+    background-color: rgba(255, 0, 0, 0.9);
+}
+
+option {
+  color: black;
+}
+
+footer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  font-size: 14px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer .fa-heart {
+  color: #ff6b6b;
+}
