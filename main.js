@@ -17,6 +17,8 @@ const updateDetails = (url, title, author) => {
     memeImage.setAttribute("src", url);
     memeTitle.textContent = title;
     memeAuthor.textContent = `Meme by: ${author}`;
+    downloadMemeBtn.setAttribute("download", `${title}.png`);
+    downloadMemeBtn.href = url;
 };
 
 const generateMeme = () => {
@@ -39,6 +41,7 @@ const generateMeme = () => {
             updateDetails(data.url, data.title, data.author);
             memeData.push(data);
             renderGallery();
+            saveMemeData();
         });
 };
 
@@ -59,6 +62,7 @@ const renderGallery = () => {
         removeMemeBtn.addEventListener("click", () => {
             memeData.splice(index, 1);
             renderGallery();
+            saveMemeData();
         });
 
         galleryItem.addEventListener("click", () => {
@@ -118,6 +122,10 @@ const favoriteMeme = () => {
     renderFavoriteMemes();
 };
 
+const saveMemeData = () => {
+    localStorage.setItem("memeData", JSON.stringify(memeData));
+};
+
 generateMemeBtn.addEventListener("click", generateMeme);
 downloadMemeBtn.addEventListener("click", downloadMeme);
 shareMemeBtn.addEventListener("click", shareMeme);
@@ -129,6 +137,13 @@ const storedFavoriteMemesData = JSON.parse(localStorage.getItem("favoriteMemesDa
 if (storedFavoriteMemesData) {
     favoriteMemesData = storedFavoriteMemesData;
     renderFavoriteMemes();
+}
+
+// Load meme data from localStorage
+const storedMemeData = JSON.parse(localStorage.getItem("memeData"));
+if (storedMemeData) {
+    memeData = storedMemeData;
+    renderGallery();
 }
 
 generateMeme();
