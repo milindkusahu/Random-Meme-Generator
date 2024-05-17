@@ -1,4 +1,4 @@
-<img src="?raw=true"></img>
+<img src="https://raw.githubusercontent.com/milindkusahu/Random-Meme-Generator/main/demo%20image.png?raw=true"></img>
 
 # Random Meme Generator
 
